@@ -2,6 +2,7 @@ import React from "react";
 
 import { locations } from "@/data/data";
 
+import Header from "./Header";
 import {
   Select,
   SelectContent,
@@ -9,16 +10,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import { Spotlight } from "./ui/spotlight";
 
 const Hero = () => {
   return (
-    <div className="bg-default relative flex h-screen w-full items-center justify-center bg-dot-base dark:bg-dot-primary">
-      <div className="bg-default pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent,black)] "></div>
-      <div className="border-default shadow-default z-10 flex flex-col gap-3 rounded-2xl border bg-white/0 p-10 backdrop-blur-[3px]">
-        <p className="text-4xl font-bold tracking-wider text-primary md:text-6xl lg:text-8xl">
-          Atabey Transfer
+    <div className="relative flex h-screen w-full flex-col items-center justify-center bg-base bg-grid-white/[0.2]">
+      <div className="absolute h-screen w-full bg-gradient-to-t from-transparent to-base to-55%"></div>
+      <Header />
+
+      <Spotlight
+        className="-left-10 -top-20 md:-left-20 md:-top-40"
+        fill="magenta"
+      />
+      <Spotlight
+        className="-left-10 -top-40 md:-top-60 md:left-0"
+        fill="cyan"
+      />
+
+      <div className="z-10 flex w-11/12 flex-col gap-3 rounded-2xl border border-secondary p-10 shadow-xl shadow-black/20 backdrop-blur-[3px] md:w-4/5 lg:w-3/5">
+        <p className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-center text-4xl font-bold tracking-wider text-transparent">
+          Reservation
         </p>
-        <div className="flex flex-col justify-between gap-3 text-lg md:flex-row md:gap-6">
+        <div className="flex flex-col justify-between gap-3 text-lg text-white md:flex-row md:gap-6">
           <label className="flex-1">
             <p className="pb-1">From</p>
             <Select>

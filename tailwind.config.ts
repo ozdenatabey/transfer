@@ -20,11 +20,23 @@ export default {
       },
       colors: {
         primary: "#00ADB5",
-        base: {
-          DEFAULT: "#222831",
-          100: "#EEEEEE",
-        },
+        base: "#212121",
         secondary: "#393E46",
+      },
+      animation: {
+        spotlight: "spotlight 2s ease .75s 1 forwards",
+      },
+      keyframes: {
+        spotlight: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
       },
     },
   },

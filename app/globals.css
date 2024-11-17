@@ -7,21 +7,6 @@ body {
 }
 
 @layer utilities {
-  .bg-default {
-    @apply bg-base-100 dark:bg-base;
-  }
-
-  .text-default {
-    @apply text-base dark:text-base-100;
-  }
-
-  .border-default {
-    @apply border-secondary/20 dark:border-secondary;
-  }
-
-  .shadow-default {
-    @apply shadow-xl shadow-secondary/20 dark:shadow-black/20;
-  }
 
   .no-focus {
     @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
