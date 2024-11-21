@@ -4,7 +4,7 @@ import { SparklesCore } from "./ui/sparkles";
 
 const Header = () => {
   return (
-    <div className="mt-28 flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="mt-16 flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="relative z-20 text-center text-3xl font-bold text-white md:text-5xl lg:text-7xl">
         Atabey Transfer
       </h1>
