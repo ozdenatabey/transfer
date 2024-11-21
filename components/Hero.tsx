@@ -35,7 +35,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center bg-base bg-grid-white/[0.2]">
+    <div className="relative flex h-screen w-full flex-col items-center justify-start bg-base bg-grid-white/[0.2]">
       <div className="absolute h-screen w-full bg-gradient-to-t from-transparent to-base to-55%"></div>
       <Header />
 

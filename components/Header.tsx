@@ -4,11 +4,11 @@ import { SparklesCore } from "./ui/sparkles";
 
 const Header = () => {
   return (
-    <div className="flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="mt-28 flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="relative z-20 text-center text-3xl font-bold text-white md:text-5xl lg:text-7xl">
         Atabey Transfer
       </h1>
-      <div className="relative mb-8 h-36 w-3/4">
+      <div className="relative h-28 w-3/4 md:h-40">
         {/* Gradients */}
         <div className="absolute inset-x-10 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm md:inset-x-20 lg:inset-x-28" />
         <div className="absolute inset-x-10 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent md:inset-x-20 lg:inset-x-28" />
