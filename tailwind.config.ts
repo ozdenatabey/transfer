@@ -20,7 +20,7 @@ export default {
       },
       colors: {
         primary: "#179FC0",
-        base: "#212121",
+        base: "#0f070f",
         secondary: "#393E46",
       },
       animation: {

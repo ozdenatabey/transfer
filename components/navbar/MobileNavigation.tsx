@@ -20,7 +20,7 @@ const MobileNavigation = () => {
         </SheetTrigger>
         <SheetContent
           side="left"
-          className="flex flex-col gap-8 border-none bg-base"
+          className="flex flex-col gap-8  bg-base shadow-2xl shadow-black"
         >
           <SheetTitle className="hidden">Navigation</SheetTitle>
           <div className="flex items-center gap-4">
