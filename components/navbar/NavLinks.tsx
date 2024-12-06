@@ -28,17 +28,26 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
               isActive
                 ? "bg-gradient-to-r from-primary to-green-300 text-base"
                 : "text-white",
-              "flex items-center justify-start gap-4 p-3 rounded-lg"
+              "flex items-center justify-start gap-4 p-3 rounded-lg",
+              cn(
+                !isMobileNav
+                  ? "hover:bg-gradient-to-r from-primary to-green-300 hover:bg-clip-text hover:text-transparent"
+                  : ""
+              )
             )}
           >
-            <Image
-              src={item.imgUrl}
-              alt={item.label}
-              width={14}
-              height={14}
-              className={cn({ invert: !isActive })}
-            />
-            <p className={cn(isActive ? "font-bold" : "font-medium")}>
+            {isMobileNav ? (
+              <Image
+                src={item.imgUrl}
+                alt={item.label}
+                width={14}
+                height={14}
+                className={cn({ invert: !isActive })}
+              />
+            ) : (
+              ""
+            )}
+            <p className={cn(isActive ? "font-bold" : "font-normal")}>
               {item.label}
             </p>
           </Link>
