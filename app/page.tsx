@@ -5,7 +5,7 @@ import Price from "@/components/Price";
 export default function Home() {
   return (
     <div>
-      <div className="h-screen">
+      <div className="bg-base">
         <Hero />
         <About />
         <Price />

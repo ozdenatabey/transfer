@@ -8,7 +8,7 @@ import MobileNavigation from "./MobileNavigation";
 
 const NavBar = () => {
   return (
-    <nav className="fixed z-50 flex w-full items-center justify-between bg-base/50 p-4 shadow-lg shadow-base/80 md:px-12">
+    <nav className="fixed z-50 flex w-full items-center justify-between bg-base/50 p-4 shadow-lg shadow-base/80 backdrop-blur-md md:px-12">
       <div className="flex items-center justify-start space-x-4">
         <MobileNavigation />
         <Link href="/">
