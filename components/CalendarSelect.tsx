@@ -60,7 +60,7 @@ export function CalendarForm() {
                       {field.value ? (
                         format(field.value, "PPP")
                       ) : (
-                        <span>Select</span>
+                        <span>Seçiniz</span>
                       )}
                     </Button>
                   </FormControl>
