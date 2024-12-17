@@ -11,30 +11,46 @@ import {
 } from "../ui/select";
 
 const Language = () => {
+  const langs = [
+    {
+      value: "tr",
+      icon: "/flags/tr.svg",
+      name: "Türkçe",
+    },
+    {
+      value: "en",
+      icon: "/flags/en.svg",
+      name: "English",
+    },
+    {
+      value: "ru",
+      icon: "/flags/ru.svg",
+      name: "Русский",
+    },
+    {
+      value: "de",
+      icon: "/flags/de.svg",
+      name: "Deutsch",
+    },
+  ];
   return (
-    <div className="mr-4">
-      <Select defaultValue="tr">
-        <SelectTrigger className="w-[60px] p-0">
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent align="start" className=" w-[100px] min-w-20">
-          <SelectGroup>
-            <SelectItem value="tr">
-              <Image src={"/flags/tr.svg"} alt="tr" width={30} height={30} />
+    <Select defaultValue="tr">
+      <SelectTrigger className="w-[110px] border-none bg-transparent p-0 md:w-[120px]">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="end" className="w-36 md:w-40">
+        <SelectGroup>
+          {langs.map((lang) => (
+            <SelectItem key={lang.value} value={lang.value}>
+              <div className="flex items-center justify-start gap-2">
+                <Image src={lang.icon} alt="tr" width={30} height={30} />
+                <p className="text-xs">{lang.name}</p>
+              </div>
             </SelectItem>
-            <SelectItem value="en">
-              <Image src={"/flags/en.svg"} alt="en" width={30} height={30} />
-            </SelectItem>
-            <SelectItem value="ru">
-              <Image src={"/flags/ru.svg"} alt="ru" width={30} height={30} />
-            </SelectItem>
-            <SelectItem value="de">
-              <Image src={"/flags/de.svg"} alt="de" width={30} height={30} />
-            </SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </div>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
 
