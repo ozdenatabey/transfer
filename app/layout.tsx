@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = localFont({
   src: "./fonts/InterVF.ttf",
@@ -23,12 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className} w-screen overflow-x-hidden antialiased`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${inter.className} w-screen  antialiased`}>
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
