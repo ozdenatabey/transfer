@@ -6,12 +6,14 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 import { sidebarLinks } from "@/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
 import { SheetClose } from "../ui/sheet";
 
 const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
   const pathname = usePathname();
+  const { lang } = useLanguage();
 
   return (
     <>
@@ -20,10 +22,15 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
           (pathname.includes(item.route) && item.route.length > 1) ||
           pathname === item.route;
 
+        const label =
+          typeof item.label === "object"
+            ? item.label[lang] || item.label.tr
+            : item.label;
+
         const LinkComponent = (
           <Link
             href={item.route}
-            key={item.label}
+            key={item.route}
             className={cn(
               isActive
                 ? "bg-gradient-to-r from-primary to-green-300 text-base"
@@ -39,7 +46,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
             {isMobileNav ? (
               <Image
                 src={item.imgUrl}
-                alt={item.label}
+                alt={label}
                 width={14}
                 height={14}
                 className={cn({ invert: !isActive })}
@@ -48,7 +55,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
               ""
             )}
             <p className={cn(isActive ? "font-bold" : "font-normal")}>
-              {item.label}
+              {label}
             </p>
           </Link>
         );

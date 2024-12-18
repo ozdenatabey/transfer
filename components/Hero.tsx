@@ -7,6 +7,7 @@ import React from "react";
 import { FaCalendarCheck, FaUsers, FaVanShuttle } from "react-icons/fa6";
 import { MdLocationPin } from "react-icons/md";
 
+import { useLanguage } from "@/contexts/LanguageContext";
 import { locations } from "@/data/data";
 
 import { CalendarForm } from "./CalendarSelect";
@@ -21,7 +22,50 @@ import {
 import ShimmerButton from "./ui/shimmerButton";
 import { Spotlight } from "./ui/spotlight";
 
-const Hero = () => {
+const Hero: React.FC = () => {
+  const { lang } = useLanguage();
+
+  const translations = {
+    tr: {
+      title: "Rezervasyon",
+      from: "Nereden",
+      to: "Nereye",
+      date: "Tarih",
+      person: "Kişi Sayısı",
+      search: "Ara",
+      select: "Seçiniz",
+    },
+    en: {
+      title: "Reservation",
+      from: "From",
+      to: "To",
+      date: "Date",
+      person: "Person Count",
+      search: "Search",
+      select: "Select",
+    },
+    ru: {
+      title: "Бронирование",
+      from: "Откуда",
+      to: "Куда",
+      date: "Дата",
+      person: "Количество человек",
+      search: "Поиск",
+      select: "Выбирать",
+    },
+    de: {
+      title: "Reservierung",
+      from: "Wovon",
+      to: "Wohin",
+      date: "Datum",
+      person: "Personenanzahl",
+      search: "Suchen",
+      select: "Wählen",
+    },
+  };
+
+  const content = translations[lang] || translations.tr;
+
   const personCount: string[] = [
     "1",
     "2",
@@ -56,17 +100,17 @@ const Hero = () => {
         className="z-10 flex w-11/12 flex-col gap-3 rounded-2xl border border-secondary p-10 shadow-xl shadow-black/20 backdrop-blur-[3px] md:w-4/5 lg:w-3/5"
       >
         <p className="bg-gradient-to-r from-primary to-green-300 bg-clip-text text-center text-4xl font-bold tracking-wider text-transparent">
-          Rezervasyon
+          {content.title}
         </p>
         <div className="grid gap-3 text-lg text-white md:grid-cols-2 md:gap-6">
           <label className="flex-1">
             <div className="flex items-center gap-2">
               <MdLocationPin />
-              <p>Nereden</p>
+              <p>{content.from}</p>
             </div>
             <Select>
               <SelectTrigger>
-                <SelectValue placeholder="Seçiniz" />
+                <SelectValue placeholder={content.select} />
               </SelectTrigger>
               <SelectContent>
                 {locations.map((location) => (
@@ -80,11 +124,11 @@ const Hero = () => {
           <label className="flex-1">
             <div className="flex items-center gap-2">
               <FaVanShuttle />
-              <p>Nereye</p>
+              <p>{content.to}</p>
             </div>
             <Select>
               <SelectTrigger>
-                <SelectValue placeholder="Seçiniz" />
+                <SelectValue placeholder={content.select} />
               </SelectTrigger>
               <SelectContent>
                 {locations.map((location) => (
@@ -98,18 +142,18 @@ const Hero = () => {
           <label className="flex-1">
             <div className="flex items-center gap-2">
               <FaCalendarCheck />
-              <p>Tarih</p>
+              <p>{content.date}</p>
             </div>
             <CalendarForm />
           </label>
           <label className="flex-1">
             <div className="flex items-center gap-2">
               <FaUsers />
-              <p>Kişi Sayısı</p>
+              <p>{content.person}</p>
             </div>
             <Select>
               <SelectTrigger>
-                <SelectValue placeholder="Seçiniz" />
+                <SelectValue placeholder={content.select} />
               </SelectTrigger>
               <SelectContent>
                 {personCount.map((person) => (
@@ -122,7 +166,7 @@ const Hero = () => {
           </label>
         </div>
         <div className="mt-4 flex justify-center">
-          <ShimmerButton field="Ara" className="w-full md:w-60" />
+          <ShimmerButton field={content.search} className="w-full md:w-60" />
         </div>
       </div>
     </div>

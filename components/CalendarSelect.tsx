@@ -13,6 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,25 @@ export function CalendarForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
+
+  const { lang } = useLanguage();
+
+  const translations = {
+    tr: {
+      select: "Seçiniz",
+    },
+    en: {
+      select: "Select",
+    },
+    ru: {
+      select: "Выбирать",
+    },
+    de: {
+      select: "Wählen",
+    },
+  };
+
+  const content = translations[lang] || translations.tr;
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
@@ -60,7 +80,7 @@ export function CalendarForm() {
                       {field.value ? (
                         format(field.value, "PPP")
                       ) : (
-                        <span>Seçiniz</span>
+                        <span>{content.select}</span>
                       )}
                     </Button>
                   </FormControl>
