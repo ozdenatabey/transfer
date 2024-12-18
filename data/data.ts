@@ -1,3 +1,15 @@
+interface Company {
+  name: string;
+  location: string;
+  phone: string;
+}
+
+export const company: Company = {
+  name: "Atabey Transfer",
+  location: "Kültür Mah. 3837 Sok. Abdi Çavuş 1 Sitesi No:22 Kepez/Antalya",
+  phone: "+90 542 331 64 54",
+};
+
 interface Location {
   value: string;
   field: string;
