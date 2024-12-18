@@ -1,32 +1,32 @@
 export const sidebarLinks = [
   {
-    imgUrl: "/icons/location-dot-solid.svg",
-    route: "/reservation",
-    label: {
-      tr: "Rezervasyon",
-      en: "Reservation",
-      ru: "Бронирование",
-      de: "Reservierung",
-    },
-  },
-  {
-    imgUrl: "/icons/question-solid.svg",
-    route: "/about",
-    label: {
-      tr: "Hakkımızda",
-      en: "About Us",
-      ru: "О нас",
-      de: "Über uns",
-    },
-  },
-  {
     imgUrl: "/icons/dollar-sign-solid.svg",
     route: "/price",
     label: {
       tr: "Fiyat Listesi",
       en: "Price List",
-      ru: "Цены",
+      ru: "Прайс-лист",
       de: "Preisliste",
+    },
+  },
+  {
+    imgUrl: "/icons/camera.svg",
+    route: "/photos",
+    label: {
+      tr: "Fotoğraf Galerisi",
+      en: "Photo Gallery",
+      ru: "Фотогалерея",
+      de: "Fotogalerie",
+    },
+  },
+  {
+    imgUrl: "/icons/question-solid.svg",
+    route: "/contact",
+    label: {
+      tr: "Bize Ulaşın",
+      en: "Contact Us",
+      ru: "Связаться с нами",
+      de: "Kontaktieren Sie uns",
     },
   },
 ];

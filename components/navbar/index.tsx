@@ -39,5 +39,3 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
-
-// TODO: Fix Desktop View Links
